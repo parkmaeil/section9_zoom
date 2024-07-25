@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.repository.BookMapper">
+    <!-- Example SQL query -->
+    <select id="bookList" resultType="com.example.entity.Book">
+        select * from book order by num desc
+    </select>
+
+    <insert id="saveBook" parameterType="com.example.entity.Book">
+        insert into book(title, price, author, page)
+        values(#{title} , #{price}, #{author}, 500)
+    </insert>
+
+    <insert id="registerBook" parameterType="com.example.entity.Book">
+        insert into book(title, price, author, page)
+        values(#{title} , #{price}, #{author}, #{page})
+    </insert>
+
+    <select id="get" resultType="com.example.entity.Book">
+        select * from book where num=#{num}
+    </select>
+
+    <delete id="remove">
+        delete from book where num=#{num}
+    </delete>
+
+    <update id="update" parameterType="com.example.entity.Book">
+        update book
+        set title=#{title}, price=#{price}, author=#{author}, page=#{page}
+        where num=#{num}
+    </update>
+
+</mapper>
