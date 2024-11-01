@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.Book;
+import com.example.entity.Customer;
 import com.example.repository.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -38,5 +39,12 @@ public class SpringRestController {
     public ResponseEntity<?> saveBook(@RequestBody Book dto) {
         mapper.saveBook(dto);
         return new ResponseEntity<>("success", HttpStatus.BAD_REQUEST);
+    }
+
+    @GetMapping("/api/users/{userId}")
+    public ResponseEntity<?> getUserName(@PathVariable String userId ){
+        Customer cus =mapper.getUserName(userId);
+        //                                                cus->JSON
+        return  new ResponseEntity<>(cus, HttpStatus.OK);
     }
 }

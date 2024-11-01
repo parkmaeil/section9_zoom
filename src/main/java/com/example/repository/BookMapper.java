@@ -1,6 +1,7 @@
 package com.example.repository;
 
 import com.example.entity.Book;
+import com.example.entity.Customer;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -13,4 +14,5 @@ public interface BookMapper {
     public Book get(int num);
     public void remove(int num);
     public void update(Book dto);
+    public Customer getUserName(String userId);
 }

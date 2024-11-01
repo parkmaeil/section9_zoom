@@ -31,4 +31,8 @@
         where num=#{num}
     </update>
 
+    <select id="getUserName" resultType="com.example.entity.Customer">
+        select * from customer where customer_id=#{userId}
+    </select>
+
 </mapper>

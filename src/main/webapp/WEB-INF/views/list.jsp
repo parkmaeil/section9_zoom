@@ -123,14 +123,24 @@
         <div class="card-body">
             <div class="row">
               <div class="col-sm-2 mb-2">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Left</h4>
-                    <p class="card-text">Some example text. Some example text.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                  </div>
-                </div>
+                <div class="card login-form">
+                             <div class="card-body">
+                               <h4 class="card-title">회원 로그인</h4>
+                               <form>
+                                 <div class="form-group">
+                                   <label for="username">사용자 이름:</label>
+                                   <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                 </div>
+                                 <div class="form-group">
+                                   <label for="password">비밀번호:</label>
+                                   <input type="password" class="form-control" id="password" placeholder="Enter password">
+                                 </div>
+                                 <button type="submit" class="btn login-button">로그인</button>
+                                 <a href="${cpath}/mregister" class="btn register-button">회원가입</a>
+                                 <a href="${cpath}/mposition" class="btn register-button">실시간 위치 추적</a>
+                               </form>
+                                 </div>
+                 </div>
               </div>
               <div class="col-sm-7 mb-2">
                 <div class="card">
